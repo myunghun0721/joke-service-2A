@@ -57,52 +57,13 @@
 		xhr.open("GET",url);
 		xhr.send();
     }
-    
-    function getStaleJoke(){
-		// I. Clear the UI
-		setup.innerHTML = "...fetching joke...";
-		punchline.innerHTML = "Can't wait for that punchline!";
-		
-		// II. Set up the XHR request
-		//const url = "https://my-joke-server.herokuapp.com/random-joke";
-		//const url = "http://localhost:3000/random-joke";
-        const url = "https://funny-joke-service-hun.herokuapp.com/stale-joke";
-        const xhr = new XMLHttpRequest();
-		
-		// III. Code that runs when the data shows up
-		xhr.onload = e => {
-			let str = e.target.responseText;
-			try{
-				let json = JSON.parse(e.target.responseText);
-				if( !json.q || !json.a){
-					setup.innerHTML = "There was a problem downloading the joke!";
-					punchline.innerHTML = "Check the console for more information";
-					console.log(`Could not find a 'q' and/or 'a' property! Downloaded string = ${str}`);
-				}else{
-					setup.innerHTML = json.q;
-					punchline.innerHTML = json.a;
-				}
-			}catch(error){
-				setup.innerHTML = "There was a problem downloading the joke!";
-					punchline.innerHTML = "Check the console for more information";
-					console.log(`This string does not parse to JSON. Downloaded string = ${str}`);
-					console.log(`error = ${error.message}`);
-			}
-		};
-		
-		// IV. Send the request
-		xhr.open("GET",url);
-		xhr.send();
-	}
    
    // Fetch a "starting" joke
-   getJoke();
-   getStaleJoke();
+   getJoke();;
 
    // When the user clicks the button, fetch a new joke
    btnFetchJoke.onclick = getJoke;
-   btnFetchStaleJoke.onclick = getStaleJoke;
-   
+
   </script>
 </body>
 </html>
