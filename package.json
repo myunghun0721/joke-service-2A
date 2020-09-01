@@ -1,0 +1,25 @@
+{
+  "name": "joke-service-2A",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/index.js",
+    "nodemon": "nodemon --watch ./src ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myunghun0721/joke-service-2A.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/myunghun0721/joke-service-2A/issues"
+  },
+  "homepage": "https://github.com/myunghun0721/joke-service-2A#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
