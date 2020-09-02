@@ -12,8 +12,7 @@
         </head>
 <body>
 	<h1>View a random joke!</h1>
-    <button id="btnFetchJoke" title="Click to see a new joke!">See new Joke!</button>
-    <button id="btnFetchStaleJoke" title="Click to see a stale joke!">See Stale Joke!</button>
+	<button id="btnFetchJoke" title="Click to see a new joke!">See new Joke!</button>
 	<hr>
 	<div>
 		<p id="setup">???</p>
@@ -28,9 +27,8 @@
 		
 		// II. Set up the XHR request
 		//const url = "https://my-joke-server.herokuapp.com/random-joke";
-		//const url = "http://localhost:3000/random-joke";
-        const url = "https://funny-joke-service-hun.herokuapp.com/random-joke";
-        const xhr = new XMLHttpRequest();
+		const url = "http://localhost:3000/random-joke";
+		const xhr = new XMLHttpRequest();
 		
 		// III. Code that runs when the data shows up
 		xhr.onload = e => {
@@ -56,14 +54,13 @@
 		// IV. Send the request
 		xhr.open("GET",url);
 		xhr.send();
-    }
+	}
    
    // Fetch a "starting" joke
-   getJoke();;
-
+   getJoke();
+   
    // When the user clicks the button, fetch a new joke
    btnFetchJoke.onclick = getJoke;
-
   </script>
 </body>
 </html>
